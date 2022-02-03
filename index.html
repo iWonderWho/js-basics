@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="model.js" defer></script>
+    <script type="text/javascript" src="view.js" defer></script>
+    <script type="text/javascript" src="controller.js" defer></script>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <table id='generator' border=2>
+        <th>Client generation customizer settings</th>
+        <tr>
+            <td>
+                <label for="clientCount">Client count: </label>
+                <input type="text" id="clientCount" name="clientCount" value='50'>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="sex">Sex: </label>
+                <select name="gender" id="gender">
+                    <option value="" selected="selected">Random</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Generate" id="generateBtn">
+            </td>
+        </tr>
+    </table>
+
+    <div id='filters' style='display: none'>
+    <input name="searchInput" type="text" id="searchInput" placeholder="Search by Full Name...">
+    <label> Loan Count</label>
+
+    <select name="loanCount" id="loanCount">
+        <option value="any">Any</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <input type="button" value="Search" id="searchButton">
+    </div>
+
+    <hr>
+    <table id="clientsTable" style='display: none'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Date Of Birth</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Loan Count</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+    <div id="stats" style='display: none'>
+        <div>
+            Total loan count: <span id="totalLoanCount"></span>
+        </div>
+        <div>
+            Average age: <span id="averageAge"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
